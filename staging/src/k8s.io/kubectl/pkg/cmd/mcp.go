@@ -20,7 +20,10 @@ type CmdFactory struct {
 
 // RegistrationCommand creates a Helm command tree for MCP tool registration.
 func (f *CmdFactory) Tools() []tools.Tool {
-	return tools.FromRootCmd(f.rootCmd)
+	gen := tools.NewGenerator(tools.WithExclusions([]string{
+		"delete", "drain", "cordon", "uncordon", "taint", "apply", "patch", "replace", "create", "edit", "rollout", "scale", "annotate", "label", "proxy", "port-forward", "auth", "certificate", "cluster-info",
+	}))
+	return gen.FromRootCmd(f.rootCmd)
 }
 
 // New creates a fresh Helm command instance and its execution function.
