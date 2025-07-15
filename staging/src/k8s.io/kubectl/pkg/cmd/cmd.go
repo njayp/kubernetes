@@ -28,6 +28,9 @@ import (
 
 	"github.com/spf13/cobra"
 
+	"github.com/njayp/ophis/bridge"
+	"github.com/njayp/ophis/mcp"
+
 	"k8s.io/cli-runtime/pkg/genericiooptions"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
@@ -502,6 +505,14 @@ func NewKubectlCommand(o KubectlOptions) *cobra.Command {
 			os.Exit(1)
 		}
 	}
+
+	// add mcp server
+	cmds.AddCommand(mcp.Command(&CmdFactory{
+		rootCmd: cmds,
+	}, &bridge.Config{
+		AppName:    "kubectl",
+		AppVersion: "0.0.1",
+	}))
 
 	return cmds
 }
