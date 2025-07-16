@@ -432,6 +432,8 @@ github.com/munnerz/goautoneg
 github.com/mxk/go-flowrate/flowrate
 # github.com/njayp/ophis v0.0.11
 ## explicit; go 1.24
+# github.com/njayp/ophis v0.0.13
+## explicit; go 1.24
 github.com/njayp/ophis/bridge
 github.com/njayp/ophis/mcp
 github.com/njayp/ophis/mcp/claude

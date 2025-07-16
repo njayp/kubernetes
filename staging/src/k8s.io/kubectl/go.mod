@@ -21,7 +21,7 @@ require (
 	github.com/mark3labs/mcp-go v0.34.0
 	github.com/mitchellh/go-wordwrap v1.0.1
 	github.com/moby/term v0.5.0
-	github.com/njayp/ophis v0.0.11
+	github.com/njayp/ophis v0.0.13
 	github.com/onsi/ginkgo/v2 v2.21.0
 	github.com/onsi/gomega v1.35.1
 	github.com/russross/blackfriday/v2 v2.1.0

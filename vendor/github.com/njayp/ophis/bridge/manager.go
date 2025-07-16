@@ -70,7 +70,7 @@ func New(factory CommandFactory, config *Config) (*Manager, error) {
 		server: server.NewMCPServer(
 			config.AppName,
 			config.AppVersion,
-			config.GetServerOptions()...,
+			config.ServerOptions...,
 		),
 	}
 
@@ -95,4 +95,9 @@ func New(factory CommandFactory, config *Config) (*Manager, error) {
 // StartServer starts the MCP server using stdio transport
 func (b *Manager) StartServer() error {
 	return server.ServeStdio(b.server)
+}
+
+// GetLogger returns the logger instance used by the bridge
+func (b *Manager) GetLogger() *slog.Logger {
+	return b.logger
 }
